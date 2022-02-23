@@ -6,7 +6,7 @@ var employeeData;
 function showEmp1(){
 	var strEmployees = "";
 	var strEmployeeDataTable= "";
-	strEmployeeDataTable = '<table class="table table-striped">'
+	strEmployeeDataTable = '<table class="table table-striped table-hover ">';
 	strEmployeeDataTable = strEmployeeDataTable + '<thead>';
 	strEmployeeDataTable = strEmployeeDataTable + '<tr class="table-active"> <th scope="col">Serial No.</th> <th scope="col">EmpId</th> <th scope="col">First</th>  <th scope="col">Place</th> <th scope="col">State</th> </tr>';
 	strEmployeeDataTable = strEmployeeDataTable + '</thead>';
@@ -26,7 +26,7 @@ function even(){
 
 	EvenTable = '<table class="table table-striped table-hover ">';
 	EvenTable = EvenTable + '<thead>';
-	EvenTable = EvenTable + '<tr> <th scope="col">employeenumber</th> <th scope="col">Name</th> <th scope="col">Place</th> </tr>'
+	EvenTable = EvenTable + '<tr class="table-active"> <th scope="col">employeenumber</th> <th scope="col">Name</th> <th scope="col">Place</th> </tr>'
 	EvenTable = EvenTable + '</thead>';
 
 	EvenTable = EvenTable + '<tbody>';
@@ -49,7 +49,7 @@ function odd(){
 
 	OddTable = '<table class="table table-striped table-hover ">';
 	OddTable = OddTable + '<thead>';
-	OddTable = OddTable + '<tr> <th scope="col">employeenumber</th> <th scope="col">Name</th> <th scope="col">Place</th> </tr>'
+	OddTable = OddTable + '<tr class="table-active"> <th scope="col">employeenumber</th> <th scope="col">Name</th> <th scope="col">Place</th> </tr>'
 	OddTable = OddTable + '</thead>';
 
 	OddTable = OddTable + '<tbody>';
@@ -75,64 +75,97 @@ function clear1(){
 }
 
 
+function searching(){
+		var searchIt = document.getElementById('num1').value;
+		var strEmployeeDataTable= "";
+	strEmployeeDataTable = '<table class="table table-striped table-hover">';
+	strEmployeeDataTable = strEmployeeDataTable + '<thead>';
+	strEmployeeDataTable = strEmployeeDataTable + '<tr> <th scope="col">#</th> <th scope="col">EmpId</th> <th scope="col">First</th>  <th scope="col">Place</th> <th scope="col">State</th> </tr>';
+	strEmployeeDataTable = strEmployeeDataTable + '</thead>';
+	strEmployeeDataTable = strEmployeeDataTable + '<tbody>';
+		for( var i=0; i<employeeData.length; i++){
+
+			if(employeeData[i].EmpId == searchIt){
+				strEmployeeDataTable = strEmployeeDataTable + '<tr> <th scope="row">'+(i+1)+'</th> <th scope="row">'+employeeData[i].EmpId+'</th> <td>'+employeeData[i].First+'</td> <td>'+employeeData[i].Place+'</td> <td>'+employeeData[i].State+'</td> </tr>' ;
+				break;
+			}
+		}
+	strEmployeeDataTable = strEmployeeDataTable + '</tbody>';
+	strEmployeeDataTable = strEmployeeDataTable + '</table>' ;
+	document.getElementById("place").innerHTML = strEmployeeDataTable ;
+		
+		
+}
+
+
 
 employeeData=[{
-  "First":"Anubhav",
-  "Last":"Pandey",
-  "Place":"KushiNagar",
+  "EmpId":"101",
+  "First":"Shubhangi",
+  "Last":"Vats",
+  "Place":"Kaushambi",
   "State":"UP"
 },
 {
+  "EmpId":"102",
   "First":"Udhay",
   "Last":"Kumar",
   "Place":"Bangalore",
   "State":"Karnataka"
 },
 {
+  "EmpId":"103",
   "First":"Jothilakshmi",
   "Last":"V",
   "Place":"Rajapalayam",
   "State":"Karnataka"
 },
 {
+  "EmpId":"104",
   "First":"Shahrukh",
   "Last":"Khan",
   "Place":"Mumbai",
   "State":"Maharashtra"
 },
 {
+  "EmpId":"105",
   "First":"Deepika",
   "Last":"Padukone",
   "Place":"Anarkali",
   "State":"Maharashtra"
 },
 {
-  "First":"Ajay",
-  "Last":"Sharma",
-  "Place":"Indirapuram",
+  "EmpId":"106",
+  "First":"Anu",
+  "Last":"Agarwal",
+  "Place":"Noida",
   "State":"UP"
 },
 {
-  "First":"Ram",
+  "EmpId":"107",
+  "First":"Vipul",
   "Last":"Kumar",
-  "Place":"Ayodhya",
+  "Place":"Noida",
   "State":"UP"
 },
 {
-  "First":"Shyam",
-  "Last":"Sharma",
+  "EmpId":"108",
+  "First":"Vicky",
+  "Last":"Kaushal",
   "Place":"Kirti Nagar",
   "State":"Delhi"
 },
 {
-  "First":"Bhagyalakshmi",
-  "Last":"Bhoomnavar",
-  "Place":"S",
-  "State":"Karnataka"
+  "EmpId":"109",
+  "First":"Virat",
+  "Last":"Kohli",
+  "Place":"Stadium",
+  "State":"Gujarat"
 },
 {
-  "First":"Manav",
-  "Last":"Rawat",
+  "EmpId":"110",
+  "First":"Katrina",
+  "Last":"Kaif",
   "Place":"Dwarka",
   "State":"Delhi"
 }]
