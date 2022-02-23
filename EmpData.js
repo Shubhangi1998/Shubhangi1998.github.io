@@ -76,8 +76,8 @@ function clear1(){
 
 
 function searching(){
-		var searchIt = document.getElementById('num1').value;
-		var strEmployeeDataTable= "";
+		var searchIt = document.getElementById('number').value;
+		var strEmployeeDataTable= " ";
 	strEmployeeDataTable = '<table class="table table-striped table-hover">';
 	strEmployeeDataTable = strEmployeeDataTable + '<thead>';
 	strEmployeeDataTable = strEmployeeDataTable + '<tr> <th scope="col">#</th> <th scope="col">EmpId</th> <th scope="col">First</th>  <th scope="col">Place</th> <th scope="col">State</th> </tr>';
@@ -86,14 +86,12 @@ function searching(){
 		for( var i=0; i<employeeData.length; i++){
 			if(employeeData[i].EmpId == searchIt){
 				strEmployeeDataTable = strEmployeeDataTable + '<tr> <th scope="row">'+(i+1)+'</th> <th scope="row">'+employeeData[i].EmpId+'</th> <td>'+employeeData[i].First+'</td> <td>'+employeeData[i].Place+'</td> <td>'+employeeData[i].State+'</td> </tr>' ;
-				break;
 			}
 		}
 	strEmployeeDataTable = strEmployeeDataTable + '</tbody>';
 	strEmployeeDataTable = strEmployeeDataTable + '</table>' ;
-	document.getElementById("place").innerHTML = parseInt(strEmployeeDataTable) ;
-		
-		
+	document.getElementById("place").innerHTML = strEmployeeDataTable;
+				
 }
 
 
