@@ -92,7 +92,7 @@ function searching(){
 		}
 	strEmployeeDataTable = strEmployeeDataTable + '</tbody>';
 	strEmployeeDataTable = strEmployeeDataTable + '</table>' ;
-	document.getElementById("place").innerHTML = strEmployeeDataTable ;
+	document.getElementById("place").innerHTML = parseInt(strEmployeeDataTable) ;
 		
 		
 }
