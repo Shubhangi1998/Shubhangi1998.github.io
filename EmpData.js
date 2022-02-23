@@ -84,7 +84,6 @@ function searching(){
 	strEmployeeDataTable = strEmployeeDataTable + '</thead>';
 	strEmployeeDataTable = strEmployeeDataTable + '<tbody>';
 		for( var i=0; i<employeeData.length; i++){
-
 			if(employeeData[i].EmpId == searchIt){
 				strEmployeeDataTable = strEmployeeDataTable + '<tr> <th scope="row">'+(i+1)+'</th> <th scope="row">'+employeeData[i].EmpId+'</th> <td>'+employeeData[i].First+'</td> <td>'+employeeData[i].Place+'</td> <td>'+employeeData[i].State+'</td> </tr>' ;
 				break;
